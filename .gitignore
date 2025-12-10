@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.env.local
+.env.local.backup
+.DS_Store
+*.pem
+.vercel
+dist/
+.cache/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.eslintcache
