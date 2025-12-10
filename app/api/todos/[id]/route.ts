@@ -38,7 +38,7 @@ export async function PUT(request: Request, { params }: Params) {
     const supabaseAdmin = getSupabaseAdmin()
     const body: UpdateTodoPayload = await request.json()
 
-    const updateData: Record<string, any> = {
+    const updateData: any = {
       updated_at: new Date().toISOString(),
     }
 
