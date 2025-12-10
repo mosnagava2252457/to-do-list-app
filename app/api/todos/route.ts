@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabaseServer'
 import { CreateTodoPayload } from '@/types'
 
-export async function GET(request: Request) {
+export async function GET(_request: Request) {
   try {
     const { data, error } = await supabaseAdmin
       .from('todos')
