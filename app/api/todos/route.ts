@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabaseServer'
+import { getSupabaseAdmin } from '@/lib/supabaseServer'
 import { CreateTodoPayload } from '@/types'
 
 export async function GET(_request: Request) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
     const { data, error } = await supabaseAdmin
       .from('todos')
       .select('*')
@@ -24,6 +25,7 @@ export async function GET(_request: Request) {
 
 export async function POST(request: Request) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
     const body: CreateTodoPayload = await request.json()
 
     if (!body.title) {

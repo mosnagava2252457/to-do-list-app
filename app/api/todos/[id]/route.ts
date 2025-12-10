@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabaseServer'
+import { getSupabaseAdmin } from '@/lib/supabaseServer'
 import { UpdateTodoPayload } from '@/types'
 
 interface Params {
@@ -10,6 +10,7 @@ interface Params {
 
 export async function GET(_request: Request, { params }: Params) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
     const { data, error } = await supabaseAdmin
       .from('todos')
       .select('*')
@@ -34,6 +35,7 @@ export async function GET(_request: Request, { params }: Params) {
 
 export async function PUT(request: Request, { params }: Params) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
     const body: UpdateTodoPayload = await request.json()
 
     const { data, error } = await supabaseAdmin
@@ -66,6 +68,7 @@ export async function PUT(request: Request, { params }: Params) {
 
 export async function DELETE(_request: Request, { params }: Params) {
   try {
+    const supabaseAdmin = getSupabaseAdmin()
     const { error } = await supabaseAdmin
       .from('todos')
       .delete()
