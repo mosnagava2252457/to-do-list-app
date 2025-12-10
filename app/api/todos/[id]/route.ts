@@ -64,7 +64,7 @@ export async function PUT(request: Request, { params }: Params) {
   }
 }
 
-export async function DELETE(request: Request, { params }: Params) {
+export async function DELETE(_request: Request, { params }: Params) {
   try {
     const { error } = await supabaseAdmin
       .from('todos')
