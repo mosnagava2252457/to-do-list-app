@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Todo, CreateTodoPayload, UpdateTodoPayload } from '@/types'
+import { Todo, CreateTodoPayload } from '@/types'
 import TodoForm from '@/components/TodoForm'
 import TodoItem from '@/components/TodoItem'
 
