@@ -38,14 +38,23 @@ export async function PUT(request: Request, { params }: Params) {
     const supabaseAdmin = getSupabaseAdmin()
     const body: UpdateTodoPayload = await request.json()
 
+    const updateData: Record<string, any> = {
+      updated_at: new Date().toISOString(),
+    }
+
+    if (body.title) {
+      updateData.title = body.title
+    }
+    if (body.description !== undefined) {
+      updateData.description = body.description
+    }
+    if (body.completed !== undefined) {
+      updateData.completed = body.completed
+    }
+
     const { data, error } = await supabaseAdmin
       .from('todos')
-      .update({
-        ...(body.title && { title: body.title }),
-        ...(body.description !== undefined && { description: body.description }),
-        ...(body.completed !== undefined && { completed: body.completed }),
-        updated_at: new Date().toISOString(),
-      })
+      .update(updateData)
       .eq('id', params.id)
       .select()
       .single()
