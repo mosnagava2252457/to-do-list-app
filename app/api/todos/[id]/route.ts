@@ -8,7 +8,7 @@ interface Params {
   }
 }
 
-export async function GET(request: Request, { params }: Params) {
+export async function GET(_request: Request, { params }: Params) {
   try {
     const { data, error } = await supabaseAdmin
       .from('todos')
