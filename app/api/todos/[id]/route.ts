@@ -52,11 +52,8 @@ export async function PUT(request: Request, { params }: Params) {
       updateData.completed = body.completed
     }
 
-    const query = supabaseAdmin
-      .from('todos')
-    
-    // @ts-ignore
-    const { data, error } = await query
+    const { data, error } = await (supabaseAdmin
+      .from('todos') as any)
       .update(updateData)
       .eq('id', params.id)
       .select()
