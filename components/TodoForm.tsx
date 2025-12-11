@@ -32,7 +32,7 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="title" className="block text-sm font-semibold text-gray-200 mb-2">
           Título da Tarefa
         </label>
         <input
@@ -41,13 +41,13 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Digite uma nova tarefa..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition duration-200 backdrop-blur-sm"
           disabled={isLoading}
         />
       </div>
 
       <div>
-        <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="description" className="block text-sm font-semibold text-gray-200 mb-2">
           Descrição (opcional)
         </label>
         <textarea
@@ -56,7 +56,7 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Adicione mais detalhes..."
           rows={3}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition duration-200 resize-none backdrop-blur-sm"
           disabled={isLoading}
         />
       </div>
@@ -64,9 +64,9 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
       <button
         type="submit"
         disabled={!title.trim() || isLoading}
-        className="w-full bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+        className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-lg disabled:shadow-none"
       >
-        {isLoading ? 'Adicionando...' : 'Adicionar Tarefa'}
+        {isLoading ? '⏳ Adicionando...' : '➕ Adicionar Tarefa'}
       </button>
     </form>
   )
