@@ -52,12 +52,13 @@ export async function PUT(request: Request, { params }: Params) {
       updateData.completed = body.completed
     }
 
-    const { data, error } = await (supabaseAdmin
+    // @ts-ignore
+    const { data, error } = await supabaseAdmin
       .from('todos')
-      .update(updateData as any)
+      .update(updateData)
       .eq('id', params.id)
       .select()
-      .single() as any)
+      .single()
 
     if (error) {
       return NextResponse.json(
