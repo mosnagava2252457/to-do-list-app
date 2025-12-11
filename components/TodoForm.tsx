@@ -41,7 +41,7 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Digite uma nova tarefa..."
-          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition duration-200 backdrop-blur-sm"
+          className="w-full px-4 py-3 bg-gray-800/50 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:ring-inset outline-none transition duration-200 backdrop-blur-sm"
           disabled={isLoading}
         />
       </div>
@@ -56,7 +56,7 @@ export default function TodoForm({ onSubmit }: TodoFormProps) {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Adicione mais detalhes..."
           rows={3}
-          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition duration-200 resize-none backdrop-blur-sm"
+          className="w-full px-4 py-3 bg-gray-800/50 text-gray-100 placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:ring-inset outline-none transition duration-200 resize-none backdrop-blur-sm"
           disabled={isLoading}
         />
       </div>

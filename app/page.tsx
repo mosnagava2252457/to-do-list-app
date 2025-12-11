@@ -115,13 +115,13 @@ export default function Home() {
         )}
 
         {/* Form */}
-        <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl shadow-2xl p-6 mb-8 border border-gray-700/50 backdrop-blur-sm">
+        <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl shadow-2xl p-6 mb-8 backdrop-blur-sm">
           <TodoForm onSubmit={handleAddTodo} />
         </div>
 
         {/* Stats */}
         {!loading && (
-          <div className="bg-gradient-to-r from-indigo-900/20 to-purple-900/20 rounded-2xl shadow-lg p-5 mb-8 border border-indigo-500/20 backdrop-blur-sm">
+          <div className="bg-gradient-to-r from-indigo-900/20 to-purple-900/20 rounded-2xl shadow-lg p-5 mb-8 backdrop-blur-sm">
             <div className="flex flex-wrap gap-6 justify-between items-center">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-indigo-400"></div>
@@ -176,7 +176,7 @@ export default function Home() {
 
         {/* Empty State */}
         {!loading && filteredTodos.length === 0 && (
-          <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl shadow-lg p-12 text-center border border-gray-700/50 backdrop-blur-sm">
+          <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl shadow-lg p-12 text-center backdrop-blur-sm">
             <div className="mb-4">
               <svg className="w-16 h-16 mx-auto text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />

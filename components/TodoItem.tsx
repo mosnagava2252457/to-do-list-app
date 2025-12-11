@@ -10,7 +10,7 @@ interface TodoItemProps {
 
 export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
   return (
-    <div className="group bg-gradient-to-r from-gray-900/60 to-gray-800/60 rounded-xl shadow-lg p-5 hover:shadow-2xl transition-all duration-300 border border-gray-700/50 backdrop-blur-sm hover:border-indigo-500/30">
+    <div className="group bg-gradient-to-r from-gray-900/60 to-gray-800/60 rounded-xl shadow-lg p-5 hover:shadow-2xl transition-all duration-300 backdrop-blur-sm hover:from-gray-900/70 hover:to-gray-800/70">
       <div className="flex items-start gap-4">
         {/* Checkbox */}
         <label className="relative flex items-center cursor-pointer mt-1">
@@ -18,7 +18,7 @@ export default function TodoItem({ todo, onToggle, onDelete }: TodoItemProps) {
             type="checkbox"
             checked={todo.completed}
             onChange={() => onToggle(todo.id, todo.completed)}
-            className="w-5 h-5 rounded border-2 border-gray-600 bg-gray-800/50 appearance-none checked:bg-gradient-to-r checked:from-indigo-500 checked:to-purple-600 checked:border-indigo-500 transition-all duration-200 cursor-pointer"
+            className="w-5 h-5 rounded bg-gray-800/50 appearance-none checked:bg-gradient-to-r checked:from-indigo-500 checked:to-purple-600 transition-all duration-200 cursor-pointer"
           />
           {todo.completed && (
             <svg className="w-3 h-3 text-white absolute left-1 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
